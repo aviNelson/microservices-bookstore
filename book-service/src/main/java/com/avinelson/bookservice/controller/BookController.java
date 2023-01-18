@@ -19,7 +19,7 @@ public class BookController {
     private final BookService bookService;
 
     @GetMapping("/{id}")
-    public BookDto findById(@PathVariable Integer id) {
+    public BookDto findById(@PathVariable("id") Integer id) {
         log.info("Looking for book {}", id);
         return bookService.findById(id)
                 .orElseThrow(() -> new NoEntityException("Nor found book with ID " + id, HttpStatus.NOT_FOUND));
