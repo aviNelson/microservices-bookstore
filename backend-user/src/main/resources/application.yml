@@ -2,22 +2,9 @@ server:
   port: 8083
   servlet:
     context-path: /user
-management:
-  endpoint:
-    gateway:
-      enabled: true
-  endpoints:
-    jmx:
-      exposure:
-        include: gateway
 spring:
   application:
     name: backend-user
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
 eureka:
   client:
     service-url:
