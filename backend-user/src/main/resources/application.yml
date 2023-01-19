@@ -1,19 +1,23 @@
 server:
   port: 8083
   servlet:
-    context-path: /users
+    context-path: /user
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    jmx:
+      exposure:
+        include: gateway
 spring:
   application:
     name: backend-user
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url:
-    username:
-    password:
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    show-sql: true
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
 eureka:
   client:
     service-url:
